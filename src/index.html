@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude for Outlook</title>
+  <link rel="stylesheet" href="taskpane.css">
+  <style>
+    body { max-width: 640px; margin: 0 auto; padding: 24px 16px; font-size: 17px; }
+    h1 { font-family: "JetBrains Mono", Consolas, monospace; font-size: 16px; letter-spacing: 0.1em; color: #c9a227; margin: 0 0 4px; }
+    .sub { color: #8a7f6e; margin: 0 0 20px; }
+    ol { padding-left: 22px; }
+    li { margin-bottom: 8px; }
+    a { color: #c9a227; }
+    code { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; color: #c8bda0; }
+    .download { display: inline-block; margin: 6px 0 18px; padding: 10px 14px; border: 1px solid #c9a227; color: #c9a227; text-decoration: none;
+      font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>CLAUDE / OUTLOOK</h1>
+  <p class="sub">A Claude button for classic Outlook. Summarize, find action items, draft replies, rewrite drafts.</p>
+
+  <a class="download" href="manifest.xml" download="manifest.xml">Download manifest.xml</a>
+
+  <ol>
+    <li>Save <code>manifest.xml</code> with the button above (if it opens as text instead, right-click the button and choose <em>Save link as</em>).</li>
+    <li>In Outlook: <strong>File &rarr; Manage Add-ins</strong>. On an on-prem Exchange server this opens a page in your browser.</li>
+    <li>Click <strong>+ &rarr; Add from file&hellip;</strong>, choose <code>manifest.xml</code>, then <strong>Install</strong>.</li>
+    <li>Restart Outlook. Open an email: <strong>Claude</strong> is on the Home ribbon. When writing, it's on the Message ribbon.</li>
+    <li>On first open, paste your Anthropic API key in the panel and <strong>Save</strong>.</li>
+  </ol>
+
+  <p class="sub">No "Add from file"? Your Exchange admin has blocked self-installed add-ins and has to install it for you.
+    Source and admin command: <a href="https://github.com/B1tR0n1n/outlook-claude">github.com/B1tR0n1n/outlook-claude</a></p>
+</body>
+</html>

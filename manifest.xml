@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Classic XML add-in manifest: works with classic Outlook on Windows against
      Exchange 2016/2019 on-premises (Mailbox requirement set 1.3) and Exchange Online.
-     https://b1tr0n1n.github.io/outlook-claude is filled in by build.sh with the HTTPS address the files are served from. -->
+     The BASE placeholders are filled in by build.sh with the HTTPS address the files are served from. -->
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
