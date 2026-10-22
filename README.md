@@ -41,6 +41,17 @@ Your Exchange admin has removed **My Custom Apps** from your role assignment pol
 New-App -Mailbox you@company.com -FileData ([System.IO.File]::ReadAllBytes("C:\path\manifest.xml"))
 ```
 
+## No add-in route: VBA macros
+
+If Exchange won't let you install the add-in, `vba/ClaudeOutlook.bas` provides the same features as Outlook macros. They need no Exchange, no install and no admin rights. Outlook (classic, Windows) runs them directly and calls the API through WinHTTP, falling back to WinINet (the Edge/IE proxy settings).
+
+1. Outlook → **Alt+F11** → **File → Import File…** → `ClaudeOutlook.bas` (also downloadable from the site's home page).
+2. Run `Claude_SetKey` once (Alt+F8 in Outlook). It's stored in `HKCU\Software\VB and VBA Program Settings\ClaudeOutlook`. Optionally run `Claude_SetAboutMe` and `Claude_SetModel`.
+3. **File → Options → Customize Ribbon → Choose commands from: Macros.** Add the reading macros (`Claude_Summarize`, `Claude_ActionItems`, `Claude_DraftReply`, `Claude_DraftReplyAll`, `Claude_Ask`) to the Home tab, and the writing macros (`Claude_Improve`, `Claude_Shorten`, `Claude_Professional`, `Claude_Friendlier`, `Claude_NotesToEmail`, `Claude_DoIt`) to the New Mail Message tab.
+4. If they won't run, check **Trust Center → Macro Settings**. If it's "signed macros only", self-sign with `SELFCERT.EXE` and then **Tools → Digital Signature** in the VBA editor. If group policy disables macros outright, only the add-in route is left.
+
+Differences from the add-in: the call is synchronous, so Outlook freezes until Claude answers (the default model is Sonnet 5.5 for that reason). Summaries and answers open in Notepad. Draft reply opens a real reply with the draft inserted. Writing actions replace the selection, or ask whether to replace the whole draft or insert at the cursor. They also work on inline replies in the reading pane.
+
 ## Troubleshooting
 
 | Symptom | Cause |
@@ -55,7 +66,7 @@ New-App -Mailbox you@company.com -FileData ([System.IO.File]::ReadAllBytes("C:\p
 
 ```bash
 npm install
-npm test            # 33 tests: ES5/IE11 guard, prompts, API client, task pane in jsdom
+npm test            # 39 tests: ES5/IE11 guard, prompts, API client, task pane in jsdom, build URLs, VBA structure
 ./build.sh          # renders docs/ + manifest.xml; BASE_URL=https://other/host ./build.sh to host elsewhere
 ```
 

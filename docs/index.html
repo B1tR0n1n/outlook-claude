@@ -34,5 +34,15 @@
 
   <p class="sub">No "Add from file"? Your Exchange admin has blocked self-installed add-ins and has to install it for you.
     Source and admin command: <a href="https://github.com/B1tR0n1n/outlook-claude">github.com/B1tR0n1n/outlook-claude</a></p>
+
+  <h1 style="margin-top:28px">NO ADD-IN ROUTE: MACROS</h1>
+  <p class="sub">Exchange won't take add-ins? The same features as Outlook VBA macros. No Exchange, no admin rights.</p>
+  <a class="download" href="ClaudeOutlook.bas" download="ClaudeOutlook.bas">Download ClaudeOutlook.bas</a>
+  <ol>
+    <li>In Outlook press <strong>Alt+F11</strong>. In the VBA editor: <strong>File &rarr; Import File&hellip;</strong> &rarr; <code>ClaudeOutlook.bas</code>.</li>
+    <li>Still in the editor, press <strong>F5</strong> on <code>Claude_SetKey</code> (or <strong>Alt+F8</strong> in Outlook) and paste your API key.</li>
+    <li>Add buttons: <strong>File &rarr; Options &rarr; Customize Ribbon</strong> &rarr; <em>Choose commands from: Macros</em>. Put the reading macros (Summarize, DraftReply&hellip;) on the Home tab, and the writing ones (Improve, Shorten&hellip;) on the New Mail tab.</li>
+    <li>If macros won't run: <strong>File &rarr; Options &rarr; Trust Center &rarr; Trust Center Settings &rarr; Macro Settings</strong>. If it's set to signed macros only, sign the project with <code>SELFCERT.EXE</code> (in the Office folder), then <strong>Tools &rarr; Digital Signature</strong> in the VBA editor.</li>
+  </ol>
 </body>
 </html>
