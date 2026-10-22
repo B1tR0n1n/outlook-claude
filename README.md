@@ -41,6 +41,18 @@ Your Exchange admin has removed **My Custom Apps** from your role assignment pol
 New-App -Mailbox you@company.com -FileData ([System.IO.File]::ReadAllBytes("C:\path\manifest.xml"))
 ```
 
+## COM add-in (recommended for on-prem Exchange)
+
+`com/` is a classic COM add-in (C#, .NET Framework 4.8, which Windows 10/11 already has). It installs on the PC for the current user, so Exchange's add-in policies never come into it, and it needs no admin rights. Same buttons and prompts as the other two versions. The request runs in the background, so Outlook doesn't freeze, and the answer opens in a window where you can edit it before using it.
+
+1. Download `ClaudeOutlook-COM.zip` from the site, unblock it (Properties → Unblock) and extract it.
+2. Close Outlook and run `install.cmd`. It copies the DLL to `%LOCALAPPDATA%\ClaudeOutlook` and registers it under HKCU, for both 32-bit and 64-bit Office.
+3. In Outlook: **Claude → Settings**, paste the key, **Test Connection**, **Save**. The key is stored DPAPI-encrypted in `HKCU\Software\ClaudeOutlook`. A key already saved by the VBA macros is picked up automatically.
+
+If the group doesn't appear: **File → Options → Add-ins → Manage: COM Add-ins → Go** and tick it. Errors go to `%LOCALAPPDATA%\ClaudeOutlook\log.txt` (never keys or mail content). `uninstall.cmd` removes everything, including the saved key. Group policy can still block it, by allowing only listed add-ins or blocking unsigned DLLs; then only IT can allow it.
+
+Build (Linux works): `com/build.sh` builds at low priority on one core, runs 79 tests (prompts, API client, JSON, ribbon XML against Microsoft's customUI schema, the DLL's COM metadata against what install.cmd registers) and packages `com/dist/ClaudeOutlook-COM.zip`. Then `./build.sh` copies it into `docs/`.
+
 ## No add-in route: VBA macros
 
 If Exchange won't let you install the add-in, `vba/ClaudeOutlook.bas` provides the same features as Outlook macros. They need no Exchange, no install and no admin rights. Outlook (classic, Windows) runs them directly and calls the API through WinHTTP, falling back to WinINet (the Edge/IE proxy settings).

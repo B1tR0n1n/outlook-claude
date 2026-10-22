@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- The COM add-in. .NET Framework 4.8 ships with Windows 10 and 11, so the DLL needs nothing installed. -->
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>ClaudeOutlook</AssemblyName>
+    <RootNamespace>ClaudeOutlook</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <!-- install.cmd registers this exact assembly name: keep both in step (a test checks). -->
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0</Version>
+    <Product>Claude for Outlook</Product>
+    <Deterministic>true</Deterministic>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Office.Interop.Outlook" Version="15.0.4797.1004" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1004" PrivateAssets="all" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Security" />
+  </ItemGroup>
+
+  <!-- Compile the Office types into our DLL (no interop assemblies to deploy, works with any Office 2013+). -->
+  <Target Name="EmbedOfficeInteropTypes" AfterTargets="ResolveAssemblyReferences">
+    <ItemGroup>
+      <ReferencePath Condition="'%(FileName)' == 'Microsoft.Office.Interop.Outlook' Or '%(FileName)' == 'Microsoft.Office.Interop.Word'">
+        <EmbedInteropTypes>true</EmbedInteropTypes>
+        <Private>false</Private>
+      </ReferencePath>
+    </ItemGroup>
+  </Target>
+
+</Project>

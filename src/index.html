@@ -22,6 +22,17 @@
   <h1>CLAUDE / OUTLOOK</h1>
   <p class="sub">A Claude button for classic Outlook. Summarize, find action items, draft replies, rewrite drafts.</p>
 
+  <h1 style="margin-top:8px">COM ADD-IN (ON-PREM EXCHANGE: USE THIS)</h1>
+  <p class="sub">Installs on your PC, not on the mail server, so Exchange can't block it. No admin rights. Outlook 2016 or later on Windows 10/11.</p>
+  <a class="download" href="ClaudeOutlook-COM.zip" download="ClaudeOutlook-COM.zip">Download ClaudeOutlook-COM.zip</a>
+  <ol>
+    <li>Right-click the zip &rarr; <strong>Properties</strong> &rarr; tick <strong>Unblock</strong> if it's there &rarr; OK. Then <strong>Extract All</strong>.</li>
+    <li>Close Outlook. In the extracted folder, double-click <code>install.cmd</code>. If Windows says it protected your PC: <strong>More info &rarr; Run anyway</strong>.</li>
+    <li>Start Outlook. The <strong>Claude</strong> group is at the right end of the Home tab.</li>
+    <li><strong>Claude &rarr; Settings</strong>: paste your Claude API key (starts <code>sk-ant-api03-</code>), click <strong>Test Connection</strong>, then <strong>Save</strong>.</li>
+  </ol>
+
+  <h1 style="margin-top:28px">OFFICE ADD-IN (EXCHANGE ONLINE / SERVER ALLOWS IT)</h1>
   <a class="download" href="manifest.xml" download="manifest.xml">Download manifest.xml</a>
 
   <ol>
