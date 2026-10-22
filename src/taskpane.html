@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude for Outlook</title>
+  <link rel="stylesheet" href="taskpane.css">
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+  <header>
+    <span class="brand">CLAUDE</span><span class="sep">/</span><span id="mode" class="mode">Loading</span>
+    <button id="open-settings" class="link" title="Settings">Settings</button>
+  </header>
+
+  <section id="settings" class="card" style="display:none">
+    <label for="apiKey">Anthropic API key</label>
+    <input id="apiKey" type="password" autocomplete="off" spellcheck="false">
+    <label for="model">Model</label>
+    <select id="model"></select>
+    <label for="context">About you (used in every request)</label>
+    <textarea id="context" rows="3" placeholder="e.g. Infrastructure engineer at an MSP. Direct, short emails. Sign off: Keith"></textarea>
+    <div class="row">
+      <button id="save-settings">Save</button>
+      <button id="clear-key" class="quiet">Remove key</button>
+    </div>
+    <p class="hint">The key is stored in your mailbox's add-in settings and goes only to api.anthropic.com.</p>
+  </section>
+
+  <section id="read-actions" style="display:none">
+    <div class="grid">
+      <button class="act" data-action="summarize">Summarize</button>
+      <button class="act" data-action="actions">Action items</button>
+      <button class="act primary" data-action="reply">Draft reply</button>
+    </div>
+  </section>
+
+  <section id="compose-actions" style="display:none">
+    <div class="grid">
+      <button class="act" data-action="improve">Improve</button>
+      <button class="act" data-action="shorten">Shorten</button>
+      <button class="act" data-action="professional">Professional</button>
+      <button class="act" data-action="friendly">Friendlier</button>
+      <button class="act primary" data-action="draft">Notes &rarr; email</button>
+    </div>
+  </section>
+
+  <section>
+    <textarea id="extra" rows="3"></textarea>
+    <div class="row">
+      <button class="act" data-action="ask">Ask / Do it</button>
+      <button id="cancel" class="quiet" style="display:none">Cancel</button>
+    </div>
+  </section>
+
+  <p id="status" class="status" role="status"></p>
+
+  <section id="output-wrap" class="card" style="display:none">
+    <div id="output" class="output"></div>
+    <div class="row wrap">
+      <button id="use-reply" class="primary">Open as reply</button>
+      <button id="use-replyall">Reply all</button>
+      <button id="use-insert" class="primary">Insert at cursor</button>
+      <button id="use-body">Replace whole body</button>
+      <button id="use-copy" class="quiet">Copy</button>
+    </div>
+    <p id="body-warning" class="hint">"Replace whole body" also removes any quoted thread below your text.</p>
+  </section>
+
+  <script src="prompts.js"></script>
+  <script src="claude.js"></script>
+  <script src="taskpane.js"></script>
+</body>
+</html>

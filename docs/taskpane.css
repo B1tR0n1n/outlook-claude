@@ -1,0 +1,48 @@
+/* b1tr0n1n design system. Plain CSS2/3 only, no custom properties: IE11 hosts older Outlook add-ins. */
+html, body { margin: 0; padding: 0; background: #0a0908; color: #c8bda0; }
+body {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 15px; line-height: 1.45; padding: 10px 12px 16px;
+}
+header, label, button, select, input, .status, .hint, .mode, .brand {
+  font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+}
+header { border-bottom: 1px solid #2a2520; padding-bottom: 8px; margin-bottom: 10px; font-size: 12px; letter-spacing: 0.08em; }
+.brand { color: #c9a227; font-weight: bold; }
+.sep { color: #2a2520; margin: 0 6px; }
+.mode { color: #8a7f6e; text-transform: uppercase; }
+header .link { float: right; }
+
+section { margin-bottom: 10px; }
+.card { background: #151311; border: 1px solid #2a2520; padding: 10px; }
+
+label { display: block; font-size: 11px; color: #8a7f6e; text-transform: uppercase; letter-spacing: 0.06em; margin: 8px 0 4px; }
+label:first-child { margin-top: 0; }
+input, select, textarea {
+  width: 100%; box-sizing: border-box; background: #0a0908; color: #c8bda0;
+  border: 1px solid #2a2520; padding: 6px 8px; font-size: 13px;
+}
+textarea { font-family: "Cormorant Garamond", Georgia, serif; font-size: 15px; resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: #c9a227; }
+
+button {
+  background: #151311; color: #c8bda0; border: 1px solid #2a2520; padding: 7px 10px;
+  font-size: 12px; cursor: pointer; letter-spacing: 0.03em;
+}
+button:hover { border-color: #c9a227; color: #c9a227; }
+button.primary { border-color: #c9a227; color: #c9a227; }
+button.quiet { color: #8a7f6e; }
+button.link { background: none; border: none; padding: 0; color: #8a7f6e; font-size: 11px; text-decoration: underline; }
+button[disabled] { opacity: 0.4; cursor: default; }
+
+.grid button { width: 48%; margin: 0 1% 6px 0; }
+.grid button.primary { width: 97%; }
+.row { margin-top: 8px; }
+.row button { margin: 0 6px 6px 0; }
+
+.status { font-size: 12px; color: #8a7f6e; min-height: 1em; margin: 6px 0 10px; }
+.status.error { color: #d9735b; }
+.status.good { color: #c9a227; }
+.hint { font-size: 11px; color: #8a7f6e; margin: 8px 0 0; }
+
+.output { white-space: pre-wrap; word-wrap: break-word; max-height: 55vh; overflow-y: auto; margin-bottom: 6px; }

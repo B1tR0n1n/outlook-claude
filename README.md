@@ -1,0 +1,62 @@
+# Claude for Outlook
+
+A small Office.js mail add-in for **classic Outlook on Windows** against **on-prem Exchange 2016/2019** (it also works on Exchange Online and Outlook on the web). It adds a **Claude** button to the ribbon.
+
+| Mode | What you get |
+|---|---|
+| Reading an email | Summarize, Action items, Draft reply (opens a real reply with the draft in it), Ask (any question about the email) |
+| Composing | Improve, Shorten, Professional, Friendlier, Notes → email, Do it (any instruction). Works on the selected text, or on the whole draft if nothing is selected. |
+
+It is personal-use only. Your Anthropic API key is stored in your mailbox's add-in settings (roaming settings), and requests go straight from Outlook to `api.anthropic.com`. There is no server in between. Everything you send leaves your network for Anthropic, so check that against client and data rules before you use it on client mail.
+
+## Why Office.js and not COM
+
+Classic Outlook has run Office.js mail add-ins since Outlook 2013 SP1, and on-prem Exchange has hosted them since Exchange 2013. The manifest asks for **Mailbox API 1.3**, the most that Exchange 2016/2019 on-prem supports, and the code doesn't depend on anything newer. All scripts are **ES5 with callbacks only**, because Outlook 2016/2019 (volume-licensed) runs add-ins inside Internet Explorer 11. Microsoft 365 builds use WebView2, and the same code runs there.
+
+## Requirements
+
+- Windows 10 or 11 with classic Outlook 2016, 2019, 2021 or Microsoft 365.
+- Exchange 2016 or 2019 (or Exchange Online). Exchange 2013 lacks ribbon buttons for add-ins.
+- Your mailbox must be allowed to install custom add-ins: the Exchange role **My Custom Apps**, which the default role assignment policy includes.
+- The workstation can reach `https://b1tr0n1n.github.io` (where the add-in's files are hosted) and `https://api.anthropic.com`.
+- An Anthropic API key (console.anthropic.com). Usage is billed per token, separately from any Claude subscription.
+
+## Install (classic Outlook + on-prem Exchange)
+
+1. Check the network from the work machine. In Edge, open
+   `https://b1tr0n1n.github.io/outlook-claude/taskpane.html`. A dark page with "CLAUDE" at the top means it's fine.
+   Then open `https://api.anthropic.com/v1/messages`. A JSON error page means it's reachable; a proxy block page means it's not.
+2. Download `manifest.xml` from this repo to the machine.
+3. In Outlook: **File → Manage Add-ins**. On on-prem Exchange this opens the Exchange add-ins page in your browser. (Alternatively: **Home → Get Add-ins → My add-ins**.)
+4. Click **+** (or **Custom add-ins → Add a custom add-in**) → **Add from file…** → pick `manifest.xml` → **Install**.
+5. Restart Outlook. Open any email: **Claude** appears on the Home ribbon. In a new email or reply it's on the Message ribbon.
+6. On first open the pane asks for your API key. Paste it, optionally fill **About you** (role, tone, sign-off), and **Save**.
+
+### If "Add from file" is missing
+
+Your Exchange admin has removed **My Custom Apps** from your role assignment policy. Either they add it back, or they install the add-in for you or for the org:
+
+```powershell
+# Exchange Management Shell
+New-App -Mailbox you@company.com -FileData ([System.IO.File]::ReadAllBytes("C:\path\manifest.xml"))
+```
+
+## Troubleshooting
+
+| Symptom | Cause |
+|---|---|
+| Pane is blank or "Add-in error" | The workstation can't load `b1tr0n1n.github.io`, because a proxy or web filter blocks it |
+| "Could not reach api.anthropic.com" | Proxy or firewall blocks the API, or TLS inspection breaks it |
+| "The API key was rejected" | Wrong or revoked key. Re-enter it in Settings |
+| "Rate limited or out of credit" | Add credit or raise limits in console.anthropic.com |
+| No Claude button | Outlook not restarted, the add-in is disabled under File → Manage Add-ins, or the server is Exchange 2013 |
+
+## Develop
+
+```bash
+npm install
+npm test            # 33 tests: ES5/IE11 guard, prompts, API client, task pane in jsdom
+./build.sh          # renders docs/ + manifest.xml; BASE_URL=https://other/host ./build.sh to host elsewhere
+```
+
+`docs/` is the deployed site (GitHub Pages serves `main:/docs`). Bump `<Version>` in `manifest.template.xml` when the manifest changes; code-only changes go live on the next page load.

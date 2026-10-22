@@ -1,0 +1,14 @@
+{
+  "name": "outlook-claude",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Claude in classic Outlook: Office.js mail add-in, ES5 for IE11-hosted builds",
+  "scripts": {
+    "build": "./build.sh",
+    "test": "node --test test/*.test.js"
+  },
+  "devDependencies": {
+    "acorn": "^8.14.0",
+    "jsdom": "^25.0.1"
+  }
+}
