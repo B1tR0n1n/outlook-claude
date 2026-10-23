@@ -1,0 +1,3355 @@
+{
+ "source": "thunderbird/webext-annotated-schemas esr-mv3",
+ "namespaces": {
+  "accounts": {
+   "permissions": [
+    "accountsRead"
+   ],
+   "members": {
+    "list": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "includeSubFolders?"
+     ]
+    },
+    "get": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "accountId",
+      "includeSubFolders?"
+     ]
+    },
+    "getDefault": {
+     "kind": "function",
+     "added": "78.7.0",
+     "params": [
+      "includeSubFolders?"
+     ]
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "102.0"
+    },
+    "onDeleted": {
+     "kind": "event",
+     "added": "102.0"
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "102.0"
+    }
+   }
+  },
+  "addressBooks": {
+   "permissions": [
+    "addressBooks"
+   ],
+   "members": {
+    "openUI": {
+     "kind": "function",
+     "added": "68.0",
+     "params": []
+    },
+    "closeUI": {
+     "kind": "function",
+     "added": "68.0",
+     "params": []
+    },
+    "list": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "complete?"
+     ]
+    },
+    "get": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "id",
+      "complete?"
+     ]
+    },
+    "create": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "properties"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "id",
+      "properties"
+     ]
+    },
+    "delete": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "id"
+     ]
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "68.0"
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "68.0"
+    },
+    "onDeleted": {
+     "kind": "event",
+     "added": "68.0"
+    }
+   }
+  },
+  "addressBooks.provider": {
+   "permissions": [
+    "addressBooks"
+   ],
+   "members": {
+    "onSearchRequest": {
+     "kind": "event",
+     "added": "91.0"
+    }
+   }
+  },
+  "addressBooks.contacts": {
+   "permissions": [
+    "addressBooks"
+   ],
+   "members": {
+    "list": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "parentId"
+     ]
+    },
+    "query": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "queryInfo"
+     ]
+    },
+    "get": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id"
+     ]
+    },
+    "getPhoto": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id"
+     ]
+    },
+    "setPhoto": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id",
+      "file"
+     ]
+    },
+    "create": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "parentId",
+      "vCard"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id",
+      "vCard"
+     ]
+    },
+    "delete": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id"
+     ]
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "128.0"
+    },
+    "onManyCreated": {
+     "kind": "event",
+     "added": "153.0"
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "128.0"
+    },
+    "onDeleted": {
+     "kind": "event",
+     "added": "128.0"
+    }
+   }
+  },
+  "addressBooks.mailingLists": {
+   "permissions": [
+    "addressBooks"
+   ],
+   "members": {
+    "list": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "parentId"
+     ]
+    },
+    "get": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id"
+     ]
+    },
+    "create": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "parentId",
+      "properties"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id",
+      "properties"
+     ]
+    },
+    "delete": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id"
+     ]
+    },
+    "addMember": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id",
+      "contactId"
+     ]
+    },
+    "listMembers": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id"
+     ]
+    },
+    "removeMember": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "id",
+      "contactId"
+     ]
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "128.0"
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "128.0"
+    },
+    "onDeleted": {
+     "kind": "event",
+     "added": "128.0"
+    },
+    "onMemberAdded": {
+     "kind": "event",
+     "added": "128.0"
+    },
+    "onMemberRemoved": {
+     "kind": "event",
+     "added": "128.0"
+    }
+   }
+  },
+  "alarms": {
+   "permissions": [
+    "alarms"
+   ],
+   "members": {
+    "create": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "name?",
+      "alarmInfo"
+     ]
+    },
+    "get": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "name?"
+     ]
+    },
+    "getAll": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "clear": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "name?"
+     ]
+    },
+    "clearAll": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "onAlarm": {
+     "kind": "event",
+     "added": "60.0"
+    }
+   }
+  },
+  "action": {
+   "permissions": [
+    "manifest:action",
+    "manifest:browser_action"
+   ],
+   "members": {
+    "setTitle": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getTitle": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setLabel": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getLabel": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setIcon": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setPopup": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getPopup": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setBadgeText": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getBadgeText": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setBadgeTextColor": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getBadgeTextColor": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setBadgeBackgroundColor": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getBadgeBackgroundColor": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "enable": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "tabId?"
+     ]
+    },
+    "disable": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "tabId?"
+     ]
+    },
+    "isEnabled": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "details"
+     ]
+    },
+    "openPopup": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "options?"
+     ]
+    },
+    "onClicked": {
+     "kind": "event",
+     "added": "115.0"
+    }
+   }
+  },
+  "browsingData": {
+   "permissions": [
+    "browsingData"
+   ],
+   "members": {
+    "settings": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "remove": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options",
+      "dataToRemove"
+     ]
+    },
+    "removeAppcache": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "options"
+     ]
+    },
+    "removeCache": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options"
+     ]
+    },
+    "removeCookies": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options"
+     ]
+    },
+    "removeDownloads": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options"
+     ]
+    },
+    "removeFileSystems": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "options"
+     ]
+    },
+    "removeFormData": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options"
+     ]
+    },
+    "removeHistory": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options"
+     ]
+    },
+    "removeIndexedDB": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "options"
+     ]
+    },
+    "removeLocalStorage": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options"
+     ]
+    },
+    "removePluginData": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options"
+     ]
+    },
+    "removePasswords": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options"
+     ]
+    },
+    "removeWebSQL": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "options"
+     ]
+    }
+   }
+  },
+  "clipboard": {
+   "permissions": [
+    "clipboardWrite"
+   ],
+   "members": {
+    "setImageData": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "imageData",
+      "imageType"
+     ]
+    }
+   }
+  },
+  "cloudFile": {
+   "permissions": [
+    "manifest:cloud_file"
+   ],
+   "members": {
+    "getAccount": {
+     "kind": "function",
+     "added": "60.4.0",
+     "params": [
+      "accountId"
+     ]
+    },
+    "getAllAccounts": {
+     "kind": "function",
+     "added": "60.4.0",
+     "params": []
+    },
+    "updateAccount": {
+     "kind": "function",
+     "added": "60.4.0",
+     "params": [
+      "accountId",
+      "updateProperties"
+     ]
+    },
+    "onFileUpload": {
+     "kind": "event",
+     "added": "60.4.0"
+    },
+    "onFileUploadAbort": {
+     "kind": "event",
+     "added": "60.4.0"
+    },
+    "onFileRename": {
+     "kind": "event",
+     "added": "102.0"
+    },
+    "onFileDeleted": {
+     "kind": "event",
+     "added": "60.4.0"
+    },
+    "onAccountAdded": {
+     "kind": "event",
+     "added": "60.4.0"
+    },
+    "onAccountDeleted": {
+     "kind": "event",
+     "added": "60.4.0"
+    }
+   }
+  },
+  "commands": {
+   "permissions": [
+    "manifest:commands"
+   ],
+   "members": {
+    "getAll": {
+     "kind": "function",
+     "added": "68.0",
+     "params": []
+    },
+    "openShortcutSettings": {
+     "kind": "function",
+     "added": "140.0",
+     "params": []
+    },
+    "reset": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "name"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "detail"
+     ]
+    },
+    "onCommand": {
+     "kind": "event",
+     "added": "68.0"
+    },
+    "onChanged": {
+     "kind": "event",
+     "added": "115.0"
+    }
+   }
+  },
+  "compose": {
+   "permissions": [],
+   "members": {
+    "beginNew": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageId?",
+      "details?"
+     ]
+    },
+    "beginReply": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageId",
+      "replyType?",
+      "details?"
+     ]
+    },
+    "beginForward": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageId",
+      "forwardType?",
+      "details?"
+     ]
+    },
+    "getComposeDetails": {
+     "kind": "function",
+     "added": "78.0",
+     "params": [
+      "tabId"
+     ]
+    },
+    "setComposeDetails": {
+     "kind": "function",
+     "added": "78.0",
+     "params": [
+      "tabId",
+      "details"
+     ]
+    },
+    "getActiveDictionaries": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "tabId"
+     ]
+    },
+    "setActiveDictionaries": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "tabId",
+      "activeDictionaries"
+     ]
+    },
+    "listAttachments": {
+     "kind": "function",
+     "added": "78.0",
+     "params": [
+      "tabId"
+     ]
+    },
+    "getAttachmentFile": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "id"
+     ]
+    },
+    "addAttachment": {
+     "kind": "function",
+     "added": "78.0",
+     "params": [
+      "tabId",
+      "attachment"
+     ]
+    },
+    "updateAttachment": {
+     "kind": "function",
+     "added": "78.0",
+     "params": [
+      "tabId",
+      "attachmentId",
+      "attachment"
+     ]
+    },
+    "removeAttachment": {
+     "kind": "function",
+     "added": "78.0",
+     "params": [
+      "tabId",
+      "attachmentId"
+     ]
+    },
+    "sendMessage": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "tabId",
+      "options?"
+     ]
+    },
+    "saveMessage": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "tabId",
+      "options?"
+     ]
+    },
+    "getComposeState": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "tabId"
+     ]
+    },
+    "onBeforeSend": {
+     "kind": "event",
+     "added": "78.0"
+    },
+    "onAfterSend": {
+     "kind": "event",
+     "added": "102.3.0"
+    },
+    "onAfterSave": {
+     "kind": "event",
+     "added": "102.3.0"
+    },
+    "onAttachmentAdded": {
+     "kind": "event",
+     "added": "78.0"
+    },
+    "onAttachmentRemoved": {
+     "kind": "event",
+     "added": "78.0"
+    },
+    "onIdentityChanged": {
+     "kind": "event",
+     "added": "78.0"
+    },
+    "onComposeStateChanged": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onActiveDictionariesChanged": {
+     "kind": "event",
+     "added": "102.0"
+    }
+   }
+  },
+  "composeAction": {
+   "permissions": [
+    "manifest:compose_action"
+   ],
+   "members": {
+    "setTitle": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getTitle": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setLabel": {
+     "kind": "function",
+     "added": "78.6.1",
+     "params": [
+      "details"
+     ]
+    },
+    "getLabel": {
+     "kind": "function",
+     "added": "78.6.1",
+     "params": [
+      "details"
+     ]
+    },
+    "setIcon": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setPopup": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getPopup": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setBadgeText": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getBadgeText": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setBadgeTextColor": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getBadgeTextColor": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setBadgeBackgroundColor": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getBadgeBackgroundColor": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "details"
+     ]
+    },
+    "enable": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "tabId?"
+     ]
+    },
+    "disable": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "tabId?"
+     ]
+    },
+    "isEnabled": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "details"
+     ]
+    },
+    "openPopup": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "options?"
+     ]
+    },
+    "onClicked": {
+     "kind": "event",
+     "added": "68.0"
+    }
+   }
+  },
+  "contextualIdentities": {
+   "permissions": [
+    "contextualIdentities"
+   ],
+   "members": {
+    "get": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "cookieStoreId"
+     ]
+    },
+    "query": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getSupportedColors": {
+     "kind": "function",
+     "added": "153.0",
+     "params": []
+    },
+    "getSupportedIcons": {
+     "kind": "function",
+     "added": "153.0",
+     "params": []
+    },
+    "create": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "details"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "cookieStoreId",
+      "details"
+     ]
+    },
+    "move": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "cookieStoreIds",
+      "position"
+     ]
+    },
+    "remove": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "cookieStoreId"
+     ]
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onRemoved": {
+     "kind": "event",
+     "added": "60.0"
+    }
+   }
+  },
+  "cookies": {
+   "permissions": [
+    "cookies"
+   ],
+   "members": {
+    "get": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getAll": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "details"
+     ]
+    },
+    "set": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "details"
+     ]
+    },
+    "remove": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getAllCookieStores": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "onChanged": {
+     "kind": "event",
+     "added": "60.0"
+    }
+   }
+  },
+  "declarativeNetRequest": {
+   "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+   ],
+   "members": {
+    "updateDynamicRules": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "options"
+     ]
+    },
+    "updateSessionRules": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "options"
+     ]
+    },
+    "getEnabledRulesets": {
+     "kind": "function",
+     "added": "115.0",
+     "params": []
+    },
+    "updateEnabledRulesets": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "updateRulesetOptions"
+     ]
+    },
+    "updateStaticRules": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "options"
+     ]
+    },
+    "getAvailableStaticRuleCount": {
+     "kind": "function",
+     "added": "115.0",
+     "params": []
+    },
+    "getDisabledRuleIds": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "options"
+     ]
+    },
+    "getDynamicRules": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "filter?"
+     ]
+    },
+    "getSessionRules": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "filter?"
+     ]
+    },
+    "isRegexSupported": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "regexOptions"
+     ]
+    },
+    "testMatchOutcome": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "request",
+      "options?"
+     ]
+    }
+   }
+  },
+  "dns": {
+   "permissions": [
+    "dns"
+   ],
+   "members": {
+    "resolve": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "hostname",
+      "flags?"
+     ]
+    }
+   }
+  },
+  "downloads": {
+   "permissions": [
+    "downloads"
+   ],
+   "members": {
+    "download": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options"
+     ]
+    },
+    "search": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "query"
+     ]
+    },
+    "pause": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "downloadId"
+     ]
+    },
+    "resume": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "downloadId"
+     ]
+    },
+    "cancel": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "downloadId"
+     ]
+    },
+    "getFileIcon": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "downloadId",
+      "options?"
+     ]
+    },
+    "open": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "downloadId"
+     ]
+    },
+    "show": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "downloadId"
+     ]
+    },
+    "showDefaultFolder": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "erase": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "query"
+     ]
+    },
+    "removeFile": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "downloadId"
+     ]
+    },
+    "acceptDanger": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "downloadId"
+     ]
+    },
+    "drag": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "downloadId"
+     ]
+    },
+    "setShelfEnabled": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "enabled"
+     ]
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onErased": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onChanged": {
+     "kind": "event",
+     "added": "60.0"
+    }
+   }
+  },
+  "extension": {
+   "permissions": [],
+   "members": {
+    "getViews": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "fetchProperties?"
+     ]
+    },
+    "getBackgroundPage": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "isAllowedIncognitoAccess": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "isAllowedFileSchemeAccess": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "setUpdateUrlData": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "data"
+     ]
+    },
+    "onRequest": {
+     "kind": "event",
+     "added": null
+    },
+    "onRequestExternal": {
+     "kind": "event",
+     "added": null
+    }
+   }
+  },
+  "folders": {
+   "permissions": [
+    "accountsRead"
+   ],
+   "members": {
+    "query": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "queryInfo?"
+     ]
+    },
+    "get": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "folderId",
+      "includeSubFolders?"
+     ]
+    },
+    "create": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "folderId",
+      "childName"
+     ]
+    },
+    "rename": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "folderId",
+      "newName"
+     ]
+    },
+    "move": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "sourceFolderId",
+      "destinationFolderId"
+     ]
+    },
+    "copy": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "sourceFolderId",
+      "destinationFolderId"
+     ]
+    },
+    "delete": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "folderId"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "folderId",
+      "updateProperties"
+     ]
+    },
+    "getFolderInfo": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "folderId"
+     ]
+    },
+    "getFolderCapabilities": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "folderId"
+     ]
+    },
+    "getParentFolders": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "folderId",
+      "includeSubFolders?"
+     ]
+    },
+    "getSubFolders": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "folderId",
+      "includeSubFolders?"
+     ]
+    },
+    "getUnifiedFolder": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "type",
+      "includeSubFolders?"
+     ]
+    },
+    "getTagFolder": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "key"
+     ]
+    },
+    "markAsRead": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "folderId"
+     ]
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onRenamed": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onMoved": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onCopied": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onDeleted": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "128.0"
+    },
+    "onFolderInfoChanged": {
+     "kind": "event",
+     "added": "91.0"
+    }
+   }
+  },
+  "i18n": {
+   "permissions": [],
+   "members": {
+    "getAcceptLanguages": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "getMessage": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "messageName",
+      "substitutions?"
+     ]
+    },
+    "getPreferredSystemLanguages": {
+     "kind": "function",
+     "added": "153.0",
+     "params": []
+    },
+    "getUILanguage": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "detectLanguage": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "text"
+     ]
+    }
+   }
+  },
+  "identities": {
+   "permissions": [
+    "accountsRead"
+   ],
+   "members": {
+    "list": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "accountId?"
+     ]
+    },
+    "get": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "identityId"
+     ]
+    },
+    "create": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "accountId",
+      "details"
+     ]
+    },
+    "delete": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "identityId"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "identityId",
+      "details"
+     ]
+    },
+    "getDefault": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "accountId"
+     ]
+    },
+    "setDefault": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "accountId",
+      "identityId"
+     ]
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onDeleted": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "91.0"
+    }
+   }
+  },
+  "identity": {
+   "permissions": [
+    "identity"
+   ],
+   "members": {
+    "getAccounts": {
+     "kind": "function",
+     "added": null,
+     "params": []
+    },
+    "getAuthToken": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "details?"
+     ]
+    },
+    "getProfileUserInfo": {
+     "kind": "function",
+     "added": null,
+     "params": []
+    },
+    "removeCachedAuthToken": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "details"
+     ]
+    },
+    "launchWebAuthFlow": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getRedirectURL": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "path?"
+     ]
+    },
+    "onSignInChanged": {
+     "kind": "event",
+     "added": null
+    }
+   }
+  },
+  "idle": {
+   "permissions": [
+    "idle"
+   ],
+   "members": {
+    "queryState": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "detectionIntervalInSeconds"
+     ]
+    },
+    "setDetectionInterval": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "intervalInSeconds"
+     ]
+    },
+    "onStateChanged": {
+     "kind": "event",
+     "added": "60.0"
+    }
+   }
+  },
+  "mailTabs": {
+   "permissions": [],
+   "members": {
+    "query": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "queryInfo?"
+     ]
+    },
+    "get": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "tabId"
+     ]
+    },
+    "create": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "createProperties?"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "tabId?",
+      "updateProperties"
+     ]
+    },
+    "getListedMessages": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "tabId?",
+      "options?"
+     ]
+    },
+    "getSelectedFolders": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "tabId?"
+     ]
+    },
+    "getSelectedMessages": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "tabId?"
+     ]
+    },
+    "setSelectedMessages": {
+     "kind": "function",
+     "added": "102.3.3",
+     "params": [
+      "tabId?",
+      "messageIds"
+     ]
+    },
+    "setQuickFilter": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "tabId?",
+      "properties"
+     ]
+    },
+    "onDisplayedFolderChanged": {
+     "kind": "event",
+     "added": "68.0"
+    },
+    "onSelectedMessagesChanged": {
+     "kind": "event",
+     "added": "68.0"
+    }
+   }
+  },
+  "management": {
+   "permissions": [],
+   "members": {
+    "getAll": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "get": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "id"
+     ]
+    },
+    "install": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "options"
+     ]
+    },
+    "getSelf": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "uninstallSelf": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "options?"
+     ]
+    },
+    "setEnabled": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "id",
+      "enabled"
+     ]
+    },
+    "onDisabled": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onEnabled": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onInstalled": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onUninstalled": {
+     "kind": "event",
+     "added": "60.0"
+    }
+   }
+  },
+  "menus": {
+   "permissions": [
+    "menus"
+   ],
+   "members": {
+    "create": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "createProperties"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "id",
+      "updateProperties"
+     ]
+    },
+    "remove": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "menuItemId"
+     ]
+    },
+    "removeAll": {
+     "kind": "function",
+     "added": "68.0",
+     "params": []
+    },
+    "overrideContext": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "contextOptions"
+     ]
+    },
+    "refresh": {
+     "kind": "function",
+     "added": "68.0",
+     "params": []
+    },
+    "onClicked": {
+     "kind": "event",
+     "added": "68.0"
+    },
+    "onShown": {
+     "kind": "event",
+     "added": "68.0"
+    },
+    "onHidden": {
+     "kind": "event",
+     "added": "68.0"
+    },
+    "getTargetElement": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "targetElementId"
+     ]
+    }
+   }
+  },
+  "messageDisplay": {
+   "permissions": [
+    "messagesRead"
+   ],
+   "members": {
+    "getDisplayedMessages": {
+     "kind": "function",
+     "added": "78.3.2",
+     "params": [
+      "tabId?"
+     ]
+    },
+    "open": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "openProperties"
+     ]
+    },
+    "onMessagesDisplayed": {
+     "kind": "event",
+     "added": "78.3.2"
+    }
+   }
+  },
+  "messageDisplayAction": {
+   "permissions": [
+    "manifest:message_display_action"
+   ],
+   "members": {
+    "setTitle": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "details"
+     ]
+    },
+    "getTitle": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "details"
+     ]
+    },
+    "setLabel": {
+     "kind": "function",
+     "added": "78.6.1",
+     "params": [
+      "details"
+     ]
+    },
+    "getLabel": {
+     "kind": "function",
+     "added": "78.6.1",
+     "params": [
+      "details"
+     ]
+    },
+    "setIcon": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "details"
+     ]
+    },
+    "setPopup": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "details"
+     ]
+    },
+    "getPopup": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "details"
+     ]
+    },
+    "setBadgeText": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "details"
+     ]
+    },
+    "getBadgeText": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "details"
+     ]
+    },
+    "setBadgeTextColor": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getBadgeTextColor": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "details"
+     ]
+    },
+    "setBadgeBackgroundColor": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "details"
+     ]
+    },
+    "getBadgeBackgroundColor": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "details"
+     ]
+    },
+    "enable": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "tabId?"
+     ]
+    },
+    "disable": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "tabId?"
+     ]
+    },
+    "isEnabled": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "details"
+     ]
+    },
+    "openPopup": {
+     "kind": "function",
+     "added": "68.2.3",
+     "params": [
+      "options?"
+     ]
+    },
+    "onClicked": {
+     "kind": "event",
+     "added": "68.2.3"
+    }
+   }
+  },
+  "messages": {
+   "permissions": [
+    "messagesRead"
+   ],
+   "members": {
+    "list": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "folderId",
+      "options?"
+     ]
+    },
+    "continueList": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageListId"
+     ]
+    },
+    "abortList": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "messageListId"
+     ]
+    },
+    "get": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageId"
+     ]
+    },
+    "getFull": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageId",
+      "options?"
+     ]
+    },
+    "getHeaders": {
+     "kind": "function",
+     "added": "153.0",
+     "params": [
+      "messageId",
+      "options?"
+     ]
+    },
+    "getRaw": {
+     "kind": "function",
+     "added": "68.7.0",
+     "params": [
+      "message",
+      "options?"
+     ]
+    },
+    "listAttachments": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "messageId"
+     ]
+    },
+    "listInlineTextParts": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "messageId"
+     ]
+    },
+    "getAttachmentFile": {
+     "kind": "function",
+     "added": "91.0",
+     "params": [
+      "messageId",
+      "partName"
+     ]
+    },
+    "deleteAttachments": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "messageId",
+      "partNames"
+     ]
+    },
+    "openAttachment": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "messageId",
+      "partName",
+      "tabId"
+     ]
+    },
+    "query": {
+     "kind": "function",
+     "added": "68.1.3",
+     "params": [
+      "queryInfo?"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageId",
+      "newProperties"
+     ]
+    },
+    "move": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageIds",
+      "folderId",
+      "options?"
+     ]
+    },
+    "copy": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageIds",
+      "folderId",
+      "options?"
+     ]
+    },
+    "delete": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageIds",
+      "options?"
+     ]
+    },
+    "import": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "file",
+      "folderId",
+      "properties?"
+     ]
+    },
+    "sendMessage": {
+     "kind": "function",
+     "added": "153.0",
+     "params": [
+      "details",
+      "options?"
+     ]
+    },
+    "saveMessage": {
+     "kind": "function",
+     "added": "153.0",
+     "params": [
+      "details",
+      "options?"
+     ]
+    },
+    "archive": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "messageIds"
+     ]
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onMoved": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onCopied": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onDeleted": {
+     "kind": "event",
+     "added": "91.0"
+    },
+    "onNewMailReceived": {
+     "kind": "event",
+     "added": "78.0"
+    }
+   }
+  },
+  "messages.tags": {
+   "permissions": [],
+   "members": {
+    "list": {
+     "kind": "function",
+     "added": "128.0",
+     "params": []
+    },
+    "get": {
+     "kind": "function",
+     "added": "153.0",
+     "params": [
+      "key"
+     ]
+    },
+    "create": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "key?",
+      "tag",
+      "color"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "key",
+      "updateProperties"
+     ]
+    },
+    "delete": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "key"
+     ]
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "140.0"
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "140.0"
+    },
+    "onDeleted": {
+     "kind": "event",
+     "added": "140.0"
+    }
+   }
+  },
+  "messengerUtilities": {
+   "permissions": [],
+   "members": {
+    "convertToPlainText": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "body",
+      "options?"
+     ]
+    },
+    "formatFileSize": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "sizeInBytes"
+     ]
+    },
+    "parseMailboxString": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "mailboxString",
+      "options?"
+     ]
+    },
+    "decodeMimeHeader": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "headerName",
+      "headerValue",
+      "isMailBoxHeader?"
+     ]
+    },
+    "encodeMimeHeader": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "headerName",
+      "headerValue",
+      "isMailBoxHeader?"
+     ]
+    }
+   }
+  },
+  "notifications": {
+   "permissions": [
+    "notifications"
+   ],
+   "members": {
+    "create": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "notificationId?",
+      "options"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": null,
+     "params": [
+      "notificationId",
+      "options"
+     ]
+    },
+    "clear": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "notificationId"
+     ]
+    },
+    "getAll": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "getPermissionLevel": {
+     "kind": "function",
+     "added": null,
+     "params": []
+    },
+    "onClosed": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onClicked": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onButtonClicked": {
+     "kind": "event",
+     "added": null
+    },
+    "onPermissionLevelChanged": {
+     "kind": "event",
+     "added": null
+    },
+    "onShowSettings": {
+     "kind": "event",
+     "added": null
+    },
+    "onShown": {
+     "kind": "event",
+     "added": "60.0"
+    }
+   }
+  },
+  "permissions": {
+   "permissions": [],
+   "members": {
+    "getAll": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "contains": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "permissions"
+     ]
+    },
+    "request": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "permissions"
+     ]
+    },
+    "remove": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "permissions"
+     ]
+    },
+    "onAdded": {
+     "kind": "event",
+     "added": "78.0"
+    },
+    "onRemoved": {
+     "kind": "event",
+     "added": "78.0"
+    }
+   }
+  },
+  "pkcs11": {
+   "permissions": [
+    "pkcs11"
+   ],
+   "members": {
+    "isModuleInstalled": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "name"
+     ]
+    },
+    "installModule": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "name",
+      "flags?"
+     ]
+    },
+    "uninstallModule": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "name"
+     ]
+    },
+    "getModuleSlots": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "name"
+     ]
+    }
+   }
+  },
+  "proxy": {
+   "permissions": [
+    "proxy"
+   ],
+   "members": {
+    "onRequest": {
+     "kind": "event",
+     "added": "153.0"
+    },
+    "onError": {
+     "kind": "event",
+     "added": "153.0"
+    }
+   }
+  },
+  "runtime": {
+   "permissions": [],
+   "members": {
+    "getBackgroundPage": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "getContexts": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "filter"
+     ]
+    },
+    "openOptionsPage": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "getManifest": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "getURL": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "path"
+     ]
+    },
+    "getDocumentId": {
+     "kind": "function",
+     "added": "153.0",
+     "params": [
+      "target"
+     ]
+    },
+    "getFrameId": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "target"
+     ]
+    },
+    "setUninstallURL": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "url?"
+     ]
+    },
+    "reload": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "requestUpdateCheck": {
+     "kind": "function",
+     "added": null,
+     "params": []
+    },
+    "restart": {
+     "kind": "function",
+     "added": null,
+     "params": []
+    },
+    "connect": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "extensionId?",
+      "connectInfo?"
+     ]
+    },
+    "connectNative": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "application"
+     ]
+    },
+    "sendMessage": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "extensionId?",
+      "message",
+      "options?"
+     ]
+    },
+    "sendNativeMessage": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "application",
+      "message"
+     ]
+    },
+    "getBrowserInfo": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "getPlatformInfo": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "getPackageDirectoryEntry": {
+     "kind": "function",
+     "added": null,
+     "params": []
+    },
+    "onStartup": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onInstalled": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onSuspend": {
+     "kind": "event",
+     "added": "102.0"
+    },
+    "onSuspendCanceled": {
+     "kind": "event",
+     "added": "102.0"
+    },
+    "onUpdateAvailable": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onBrowserUpdateAvailable": {
+     "kind": "event",
+     "added": null
+    },
+    "onConnect": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onUserScriptConnect": {
+     "kind": "event",
+     "added": "140.0"
+    },
+    "onConnectExternal": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onMessage": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onMessageExternal": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onUserScriptMessage": {
+     "kind": "event",
+     "added": "140.0"
+    },
+    "onRestartRequired": {
+     "kind": "event",
+     "added": null
+    },
+    "onPerformanceWarning": {
+     "kind": "event",
+     "added": "128.0"
+    }
+   }
+  },
+  "scripting.compose": {
+   "permissions": [
+    "compose"
+   ],
+   "members": {
+    "getRegisteredScripts": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "filter?"
+     ]
+    },
+    "registerScripts": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "scripts"
+     ]
+    },
+    "unregisterScripts": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "filter?"
+     ]
+    }
+   }
+  },
+  "scripting.messageDisplay": {
+   "permissions": [
+    "messagesRead"
+   ],
+   "members": {
+    "getRegisteredScripts": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "filter?"
+     ]
+    },
+    "registerScripts": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "scripts"
+     ]
+    },
+    "unregisterScripts": {
+     "kind": "function",
+     "added": "128.0",
+     "params": [
+      "filter?"
+     ]
+    }
+   }
+  },
+  "scripting": {
+   "permissions": [
+    "scripting"
+   ],
+   "members": {
+    "executeScript": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "injection"
+     ]
+    },
+    "insertCSS": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "injection"
+     ]
+    },
+    "removeCSS": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "injection"
+     ]
+    },
+    "registerContentScripts": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "scripts"
+     ]
+    },
+    "getRegisteredContentScripts": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "filter?"
+     ]
+    },
+    "unregisterContentScripts": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "filter?"
+     ]
+    },
+    "updateContentScripts": {
+     "kind": "function",
+     "added": "102.0",
+     "params": [
+      "scripts"
+     ]
+    }
+   }
+  },
+  "sessions": {
+   "permissions": [],
+   "members": {
+    "setTabValue": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "tabId",
+      "key",
+      "value"
+     ]
+    },
+    "getTabValue": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "tabId",
+      "key"
+     ]
+    },
+    "removeTabValue": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "tabId",
+      "key"
+     ]
+    }
+   }
+  },
+  "spaces": {
+   "permissions": [],
+   "members": {
+    "create": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "name",
+      "tabProperties",
+      "buttonProperties?"
+     ]
+    },
+    "get": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "spaceId"
+     ]
+    },
+    "query": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "queryInfo?"
+     ]
+    },
+    "remove": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "spaceId"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "spaceId",
+      "tabProperties",
+      "buttonProperties?"
+     ]
+    },
+    "open": {
+     "kind": "function",
+     "added": "115.0",
+     "params": [
+      "spaceId",
+      "windowId?"
+     ]
+    }
+   }
+  },
+  "storage": {
+   "permissions": [
+    "storage"
+   ],
+   "members": {
+    "onChanged": {
+     "kind": "event",
+     "added": "60.0"
+    }
+   }
+  },
+  "tabs": {
+   "permissions": [],
+   "members": {
+    "get": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "tabId"
+     ]
+    },
+    "getCurrent": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": []
+    },
+    "connect": {
+     "kind": "function",
+     "added": "78.4.0",
+     "params": [
+      "tabId",
+      "connectInfo?"
+     ]
+    },
+    "sendMessage": {
+     "kind": "function",
+     "added": "78.4.0",
+     "params": [
+      "tabId",
+      "message",
+      "options?"
+     ]
+    },
+    "create": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "createProperties"
+     ]
+    },
+    "duplicate": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "tabId"
+     ]
+    },
+    "query": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "queryInfo?"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "tabId?",
+      "updateProperties"
+     ]
+    },
+    "move": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "tabIds",
+      "moveProperties"
+     ]
+    },
+    "reload": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "tabId?",
+      "reloadProperties?"
+     ]
+    },
+    "remove": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "tabIds"
+     ]
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "60.3.0"
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "60.3.0"
+    },
+    "onMoved": {
+     "kind": "event",
+     "added": "60.3.0"
+    },
+    "onActivated": {
+     "kind": "event",
+     "added": "60.3.0"
+    },
+    "onDetached": {
+     "kind": "event",
+     "added": "60.3.0"
+    },
+    "onAttached": {
+     "kind": "event",
+     "added": "60.3.0"
+    },
+    "onRemoved": {
+     "kind": "event",
+     "added": "60.3.0"
+    }
+   }
+  },
+  "theme": {
+   "permissions": [],
+   "members": {
+    "getCurrent": {
+     "kind": "function",
+     "added": "78.7.1",
+     "params": [
+      "windowId?"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "78.7.1",
+     "params": [
+      "windowId?",
+      "details"
+     ]
+    },
+    "reset": {
+     "kind": "function",
+     "added": "78.7.1",
+     "params": [
+      "windowId?"
+     ]
+    },
+    "onUpdated": {
+     "kind": "event",
+     "added": "78.7.1"
+    }
+   }
+  },
+  "userScripts": {
+   "permissions": [
+    "manifest:user_scripts",
+    "userScripts"
+   ],
+   "members": {
+    "register": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "scripts"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "scripts"
+     ]
+    },
+    "unregister": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "filter?"
+     ]
+    },
+    "getScripts": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "filter?"
+     ]
+    },
+    "configureWorld": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "properties"
+     ]
+    },
+    "resetWorldConfiguration": {
+     "kind": "function",
+     "added": "140.0",
+     "params": [
+      "worldId?"
+     ]
+    },
+    "getWorldConfigurations": {
+     "kind": "function",
+     "added": "140.0",
+     "params": []
+    },
+    "execute": {
+     "kind": "function",
+     "added": "153.0",
+     "params": [
+      "injection"
+     ]
+    }
+   }
+  },
+  "webNavigation": {
+   "permissions": [
+    "webNavigation"
+   ],
+   "members": {
+    "getFrame": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "details"
+     ]
+    },
+    "getAllFrames": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "details"
+     ]
+    },
+    "onBeforeNavigate": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onCommitted": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onDOMContentLoaded": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onCompleted": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onErrorOccurred": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onCreatedNavigationTarget": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onReferenceFragmentUpdated": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onTabReplaced": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onHistoryStateUpdated": {
+     "kind": "event",
+     "added": "60.0"
+    }
+   }
+  },
+  "webRequest": {
+   "permissions": [
+    "webRequest"
+   ],
+   "members": {
+    "handlerBehaviorChanged": {
+     "kind": "function",
+     "added": "60.0",
+     "params": []
+    },
+    "filterResponseData": {
+     "kind": "function",
+     "added": "60.0",
+     "params": [
+      "requestId"
+     ]
+    },
+    "getSecurityInfo": {
+     "kind": "function",
+     "added": "68.0",
+     "params": [
+      "requestId",
+      "options?"
+     ]
+    },
+    "onBeforeRequest": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onBeforeSendHeaders": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onSendHeaders": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onHeadersReceived": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onAuthRequired": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onResponseStarted": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onBeforeRedirect": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onCompleted": {
+     "kind": "event",
+     "added": "60.0"
+    },
+    "onErrorOccurred": {
+     "kind": "event",
+     "added": "60.0"
+    }
+   }
+  },
+  "windows": {
+   "permissions": [],
+   "members": {
+    "get": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "windowId",
+      "getInfo?"
+     ]
+    },
+    "getCurrent": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "getInfo?"
+     ]
+    },
+    "getLastFocused": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "getInfo?"
+     ]
+    },
+    "getAll": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "getInfo?"
+     ]
+    },
+    "create": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "createData?"
+     ]
+    },
+    "update": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "windowId",
+      "updateInfo"
+     ]
+    },
+    "remove": {
+     "kind": "function",
+     "added": "60.3.0",
+     "params": [
+      "windowId"
+     ]
+    },
+    "openDefaultBrowser": {
+     "kind": "function",
+     "added": "78.6.0",
+     "params": [
+      "url"
+     ]
+    },
+    "onCreated": {
+     "kind": "event",
+     "added": "60.3.0"
+    },
+    "onRemoved": {
+     "kind": "event",
+     "added": "60.3.0"
+    },
+    "onFocusChanged": {
+     "kind": "event",
+     "added": "60.3.0"
+    }
+   }
+  }
+ },
+ "manifestKeys": [
+  "action",
+  "background",
+  "chrome_settings_overrides",
+  "cloud_file",
+  "commands",
+  "compose_action",
+  "compose_scripts",
+  "content_scripts",
+  "content_security_policy",
+  "declarative_net_request",
+  "default_locale",
+  "experiment_apis",
+  "granted_host_permissions",
+  "hidden",
+  "host_permissions",
+  "icons",
+  "incognito",
+  "l10n_resources",
+  "message_display_action",
+  "message_display_scripts",
+  "minimum_chrome_version",
+  "minimum_opera_version",
+  "oauth_provider",
+  "optional_host_permissions",
+  "optional_permissions",
+  "options_page",
+  "options_ui",
+  "permissions",
+  "protocol_handlers",
+  "theme_experiment",
+  "web_accessible_resources"
+ ],
+ "permissions": [
+  "accountsFolders",
+  "accountsIdentities",
+  "accountsRead",
+  "activeTab",
+  "addressBooks",
+  "alarms",
+  "authenticationInfo",
+  "bookmarksInfo",
+  "browserSettings",
+  "browsingActivity",
+  "browsingData",
+  "clipboardRead",
+  "clipboardWrite",
+  "compose",
+  "compose.save",
+  "compose.send",
+  "contextualIdentities",
+  "cookies",
+  "declarativeNetRequest",
+  "declarativeNetRequestFeedback",
+  "declarativeNetRequestWithHostAccess",
+  "denied",
+  "dns",
+  "downloads",
+  "downloads.open",
+  "financialAndPaymentInfo",
+  "geolocation",
+  "granted",
+  "healthInfo",
+  "identity",
+  "idle",
+  "locationInfo",
+  "management",
+  "menus",
+  "menus.overrideContext",
+  "messages.save",
+  "messages.send",
+  "messagesDelete",
+  "messagesImport",
+  "messagesModify",
+  "messagesModifyPermanent",
+  "messagesMove",
+  "messagesRead",
+  "messagesTags",
+  "messagesTagsList",
+  "messagesUpdate",
+  "messengerSettings",
+  "mozillaAddons",
+  "nativeMessaging",
+  "none",
+  "notifications",
+  "personalCommunications",
+  "personallyIdentifyingInfo",
+  "pkcs11",
+  "privacy",
+  "proxy",
+  "scripting",
+  "searchTerms",
+  "sensitiveDataUpload",
+  "sessions",
+  "storage",
+  "tabs",
+  "technicalAndInteraction",
+  "theme",
+  "unlimitedStorage",
+  "userScripts",
+  "webNavigation",
+  "webRequest",
+  "webRequestAuthProvider",
+  "webRequestBlocking",
+  "webRequestFilterResponse",
+  "webRequestFilterResponse.serviceWorkerScript",
+  "websiteActivity",
+  "websiteContent"
+ ]
+}

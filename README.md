@@ -53,6 +53,18 @@ If the group doesn't appear: **File → Options → Add-ins → Manage: COM Add-
 
 Build (Linux works): `com/build.sh` builds at low priority on one core, runs 79 tests (prompts, API client, JSON, ribbon XML against Microsoft's customUI schema, the DLL's COM metadata against what install.cmd registers) and packages `com/dist/ClaudeOutlook-COM.zip`. Then `./build.sh` copies it into `docs/`.
 
+## Thunderbird extension
+
+`thunderbird/` is a Manifest V3 MailExtension for Thunderbird 128 or later (Linux, macOS, Windows), with the same actions and the same prompts and API client: `src/prompts.js`, `src/claude.js` and the task pane styles are copied into the package as-is. Proton Mail works through Proton Mail Bridge, because Bridge makes it an ordinary IMAP account in Thunderbird. Anything you run Claude on is decrypted and sent to Anthropic.
+
+1. Download `claude-thunderbird.xpi` from the site (or run `thunderbird/build.sh`).
+2. Thunderbird: **☰ → Add-ons and Themes →** gear → **Install Add-on From File…** If your build refuses an unsigned add-on, use **gear → Debug Add-ons → Load Temporary Add-on…** and pick the .xpi. That lasts until Thunderbird restarts.
+3. Click **Claude** on the message toolbar (reading) or the compose toolbar (writing). A Claude window opens for that message. Paste the key on first run.
+
+Reading: Summarize, Action items, Draft reply. **Open as reply** starts a real Thunderbird reply with the draft above the quote. Writing: Improve, Shorten, Professional, Friendlier, Notes → email, Do it. It works on the selection, through a compose script registered at startup, or on your part of the draft (everything above the quote, signature or forwarded message). **Replace my text** leaves the quote and signature alone. The result is editable before you use it. Permissions: read messages, compose, storage, `sensitiveDataUpload` (Thunderbird's disclosure that mail goes to a remote server), and host access to `api.anthropic.com` only. The key sits unencrypted in the Thunderbird profile's extension storage.
+
+Tests check every manifest key, permission and `messenger.*` call against Thunderbird's own API schemas (`thunderbird/test/tb-api.json`, condensed from [webext-annotated-schemas](https://github.com/thunderbird/webext-annotated-schemas) `esr-mv3` by `scripts/tb-api-snapshot.js`), and drive the panel in jsdom against a fake `messenger`.
+
 ## No add-in route: VBA macros
 
 If Exchange won't let you install the add-in, `vba/ClaudeOutlook.bas` provides the same features as Outlook macros. They need no Exchange, no install and no admin rights. Outlook (classic, Windows) runs them directly and calls the API through WinHTTP, falling back to WinINet (the Edge/IE proxy settings).
@@ -78,7 +90,7 @@ Differences from the add-in: the call is synchronous, so Outlook freezes until C
 
 ```bash
 npm install
-npm test            # 39 tests: ES5/IE11 guard, prompts, API client, task pane in jsdom, build URLs, VBA structure
+npm test            # 76 tests: ES5/IE11 guard, prompts, API client, task pane in jsdom, build URLs, VBA structure, Thunderbird extension
 ./build.sh          # renders docs/ + manifest.xml; BASE_URL=https://other/host ./build.sh to host elsewhere
 ```
 

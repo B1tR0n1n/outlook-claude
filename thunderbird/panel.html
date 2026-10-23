@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Claude</title>
+  <link rel="stylesheet" href="taskpane.css">
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <header>
+    <span class="brand">CLAUDE</span><span class="sep">/</span><span id="mode" class="mode">Loading</span>
+    <button id="open-settings" class="link" title="Settings">Settings</button>
+  </header>
+
+  <section id="settings" class="card" style="display:none">
+    <label for="apiKey">Anthropic API key</label>
+    <input id="apiKey" type="password" autocomplete="off" spellcheck="false">
+    <label for="model">Model</label>
+    <select id="model"></select>
+    <label for="context">About you (used in every request)</label>
+    <textarea id="context" rows="3" placeholder="e.g. Infrastructure engineer at an MSP. Direct, short emails. Sign off: Keith"></textarea>
+    <div class="row">
+      <button id="save-settings">Save</button>
+      <button id="clear-key" class="quiet">Remove key</button>
+    </div>
+    <p class="hint">Stored unencrypted in this Thunderbird profile. Sent only to api.anthropic.com, along with each email you run Claude on.</p>
+  </section>
+
+  <section id="read-actions" style="display:none">
+    <div class="grid">
+      <button class="act" data-action="summarize">Summarize</button>
+      <button class="act" data-action="actions">Action items</button>
+      <button class="act primary" data-action="reply">Draft reply</button>
+    </div>
+  </section>
+
+  <section id="compose-actions" style="display:none">
+    <div class="grid">
+      <button class="act" data-action="improve">Improve</button>
+      <button class="act" data-action="shorten">Shorten</button>
+      <button class="act" data-action="professional">Professional</button>
+      <button class="act" data-action="friendly">Friendlier</button>
+      <button class="act primary" data-action="draft">Notes &rarr; email</button>
+    </div>
+  </section>
+
+  <section id="ask-box" style="display:none">
+    <textarea id="extra" rows="3"></textarea>
+    <div class="row">
+      <button class="act" data-action="ask">Ask / Do it</button>
+      <button id="cancel" class="quiet" style="display:none">Cancel</button>
+    </div>
+  </section>
+
+  <p id="status" class="status" role="status"></p>
+
+  <section id="output-wrap" class="card" style="display:none">
+    <textarea id="output" class="output" rows="14" spellcheck="true"></textarea>
+    <div class="row wrap">
+      <button id="use-reply" class="primary">Open as reply</button>
+      <button id="use-replyall">Reply all</button>
+      <button id="use-selection" class="primary">Replace selection</button>
+      <button id="use-own">Replace my text</button>
+      <button id="use-copy" class="quiet">Copy</button>
+    </div>
+    <p id="compose-hint" class="hint">You can edit the result first. "Replace my text" keeps the quoted thread and your signature.</p>
+  </section>
+
+  <script src="prompts.js"></script>
+  <script src="claude.js"></script>
+  <script src="mail.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>

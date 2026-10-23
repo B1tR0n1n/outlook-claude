@@ -17,6 +17,9 @@ cp assets/*.png docs/assets/
 cp vba/ClaudeOutlook.bas docs/
 # COM add-in zip, packaged by com/build.sh (needs the .NET SDK, so it is built separately and committed).
 cp com/dist/ClaudeOutlook-COM.zip docs/
+# Thunderbird extension: a plain zip, so it is packaged on every build.
+thunderbird/build.sh >/dev/null
+cp thunderbird/dist/claude-thunderbird.xpi docs/
 sed "s#{{BASE}}#$BASE_URL#g" manifest.template.xml > docs/manifest.xml
 cp docs/manifest.xml manifest.xml
 touch docs/.nojekyll

@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Claude for Thunderbird",
+  "version": "1.0.0",
+  "description": "Summarize email, draft replies and rewrite drafts with Claude, using your own Anthropic API key.",
+  "author": "b1tr0n1n",
+  "homepage_url": "https://b1tr0n1n.github.io/outlook-claude/",
+  "browser_specific_settings": {
+    "gecko": { "id": "claude-thunderbird@b1tr0n1n.github.io", "strict_min_version": "128.0" }
+  },
+  "icons": { "16": "icons/icon-16.png", "32": "icons/icon-32.png", "64": "icons/icon-64.png", "128": "icons/icon-128.png" },
+  "background": { "scripts": ["background.js"] },
+  "permissions": ["messagesRead", "compose", "storage", "sensitiveDataUpload"],
+  "host_permissions": ["https://api.anthropic.com/*"],
+  "message_display_action": {
+    "default_title": "Claude: summarize, action items, draft a reply",
+    "default_label": "Claude",
+    "default_icon": { "16": "icons/icon-16.png", "32": "icons/icon-32.png" }
+  },
+  "compose_action": {
+    "default_title": "Claude: improve, shorten, change tone, notes to email",
+    "default_label": "Claude",
+    "default_icon": { "16": "icons/icon-16.png", "32": "icons/icon-32.png" }
+  },
+  "options_ui": { "page": "panel.html" }
+}
