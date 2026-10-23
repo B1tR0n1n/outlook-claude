@@ -49,6 +49,8 @@ New-App -Mailbox you@company.com -FileData ([System.IO.File]::ReadAllBytes("C:\p
 2. Close Outlook and run `install.cmd`. It copies the DLL to `%LOCALAPPDATA%\ClaudeOutlook` and registers it under HKCU, for both 32-bit and 64-bit Office.
 3. In Outlook: **Claude → Settings**, paste the key, **Test Connection**, **Save**. The key is stored DPAPI-encrypted in `HKCU\Software\ClaudeOutlook`. A key already saved by the VBA macros is picked up automatically.
 
+Security review: [`security/com-addin-security-brief.pdf`](security/com-addin-security-brief.pdf) covers what leaves the PC, the controls in the code, residual risks and the decisions needed before use on client mail.
+
 If the group doesn't appear: **File → Options → Add-ins → Manage: COM Add-ins → Go** and tick it. Errors go to `%LOCALAPPDATA%\ClaudeOutlook\log.txt` (never keys or mail content). `uninstall.cmd` removes everything, including the saved key. Group policy can still block it, by allowing only listed add-ins or blocking unsigned DLLs; then only IT can allow it.
 
 Build (Linux works): `com/build.sh` builds at low priority on one core, runs 79 tests (prompts, API client, JSON, ribbon XML against Microsoft's customUI schema, the DLL's COM metadata against what install.cmd registers) and packages `com/dist/ClaudeOutlook-COM.zip`. Then `./build.sh` copies it into `docs/`.
